@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Background Video (no negative z‑index!) */}
+      {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/stock_video.mp4"
@@ -19,16 +19,16 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 flex flex-col justify-center items-center h-full text-center px-4 text-white">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
-          Train Smarter. Perform Better.
+          Join the Recur Team
         </h1>
         <p className="text-lg md:text-xl max-w-xl mb-6">
-          Your all-in-one platform for multi-sport training, performance tracking.
+          Shop exclusive merch, check out your favorite athletes’ stats, and access pro tips—all in one place.
         </p>
         <a
-          href="#"
+          href="#shop"
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded transition duration-300"
         >
-          Get Started
+          Shop Now
         </a>
       </div>
     </section>
