@@ -5,10 +5,11 @@ function NavBar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const isAuthenticated = false;
 
+  const links = ["Home", "Resources", "Athletes", "Shop", "Contact"];
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-zinc-900 text-white shadow-md">
       <div className="container mx-auto">
-        {/* Increased header height */}
         <div className="relative flex items-center justify-between px-4 h-25">
           {/* Logo */}
           <div className="w-40 lg:w-52 flex items-center">
@@ -52,16 +53,19 @@ function NavBar() {
             } absolute top-full right-4 w-[250px] rounded bg-zinc-800 shadow-lg px-6 py-4 lg:static lg:block lg:w-auto lg:bg-transparent lg:shadow-none`}
           >
             <ul className="flex flex-col lg:flex-row lg:items-center gap-y-4 lg:gap-x-12">
-              {["Home", "Resources", "Athletes", "Shop", "Contact"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`/${item.toLowerCase()}`}
-                    className="block py-2 text-white hover:text-blue-400 transition-colors duration-200 text-lg md:text-xl font-medium font-poppins"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              {links.map((item) => {
+                const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+                return (
+                  <li key={item}>
+                    <a
+                      href={path}
+                      className="block py-2 text-white hover:text-blue-400 transition-colors duration-200 text-lg md:text-xl font-medium font-poppins"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                );
+              })}
               {isAuthenticated && (
                 <li>
                   <a
