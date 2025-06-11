@@ -6,10 +6,8 @@ import './App.css'
 import NavBar         from './components/NavBar'
 import Hero           from './components/Hero'
 import About          from './components/About'
-import ShopPreview    from './components/shopPreview'
-import Athletes       from './components/Athletes'
 import AthletesPage   from './pages/AthletePage'
-import AthleteProfile from './pages/AthleteProfile'
+import FeaturedGrid from './components/FeatureGrid'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -23,13 +21,11 @@ createRoot(document.getElementById('root')).render(
               <>
                 <Hero />
                 <About />
-                <ShopPreview />
-                <Athletes />
+                <FeaturedGrid />
               </>
             }
           />
           <Route path="/athletes" element={<AthletesPage />} />
-          <Route path="/athletes/:id" element={<AthleteProfile />} />
         </Routes>
       </main>
     </BrowserRouter>

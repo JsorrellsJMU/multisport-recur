@@ -22,7 +22,7 @@ const imgVariant = {
 }
 
 const About = () => (
-  <section className="py-16 bg-white text-gray-900 overflow-hidden">
+  <section className="py-16 bg-gradient-to-br from-blue-50 to-zinc-100 text-gray-900 overflow-hidden">
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4">
       {/* Text Column */}
       <motion.div
