@@ -1,11 +1,12 @@
-import { useState } from "react";
-import logo from '../assets/5.png';
+// src/components/NavBar.jsx
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import logo from "../assets/5.png"
 
 function NavBar() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  const isAuthenticated = false;
-
-  const links = ["Home", "Resources", "Athletes", "Shop", "Contact"];
+  const [navbarOpen, setNavbarOpen] = useState(false)
+  const isAuthenticated = false
+  const links = ["Home", "Resources", "Athletes", "Shop", "Contact"]
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-zinc-900 text-white shadow-md">
@@ -13,13 +14,13 @@ function NavBar() {
         <div className="relative flex items-center justify-between px-4 h-25">
           {/* Logo */}
           <div className="w-40 lg:w-52 flex items-center">
-            <a href="/" className="block">
+            <Link to="/">
               <img
                 src={logo}
                 alt="Multi Sport Recur Logo"
                 className="h-24 object-contain mt-3"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -54,26 +55,26 @@ function NavBar() {
           >
             <ul className="flex flex-col lg:flex-row lg:items-center gap-y-4 lg:gap-x-12">
               {links.map((item) => {
-                const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+                const path = item === "Home" ? "/" : `/${item.toLowerCase()}`
                 return (
                   <li key={item}>
-                    <a
-                      href={path}
+                    <Link
+                      to={path}
                       className="block py-2 text-white hover:text-blue-400 transition-colors duration-200 text-lg md:text-xl font-medium font-poppins"
                     >
                       {item}
-                    </a>
+                    </Link>
                   </li>
-                );
+                )
               })}
               {isAuthenticated && (
                 <li>
-                  <a
-                    href="/admin"
+                  <Link
+                    to="/admin"
                     className="block py-2 text-white hover:text-blue-400 text-lg md:text-xl font-medium font-poppins"
                   >
                     Admin
-                  </a>
+                  </Link>
                 </li>
               )}
             </ul>
@@ -81,23 +82,23 @@ function NavBar() {
 
           {/* Auth Buttons */}
           <div className="hidden lg:flex items-center gap-x-12">
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="text-white hover:text-blue-400 border border-transparent hover:border-blue-400 transition duration-200 text-lg md:text-xl font-medium font-poppins px-2"
             >
               Login
-            </a>
-            <a
-              href="/signup"
+            </Link>
+            <Link
+              to="/signup"
               className="bg-blue-600 hover:bg-blue-700 text-white transition duration-200 text-lg md:text-xl font-medium font-poppins px-2 py-1 rounded"
             >
               Sign Up
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </header>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar
